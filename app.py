@@ -17,6 +17,19 @@ st.markdown(
     [data-testid="stSidebar"] {
         background-color: #f784c5;
     }
+    /* Teks di sidebar jadi heroes: putih, bold, lebih besar */
+    [data-testid="stSidebar"] h2, 
+    [data-testid="stSidebar"] h3, 
+    [data-testid="stSidebar"] label {
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    /* Bisa tambahkan efek shadow */
+    [data-testid="stSidebar"] {
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
     </style>
     """,
     unsafe_allow_html=True
