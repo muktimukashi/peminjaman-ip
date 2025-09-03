@@ -11,7 +11,7 @@ supabase = create_client(supabase_url, supabase_key)
 
 # === KONFIGURASI STREAMLIT ===
 st.set_page_config(page_title="Peminjaman iPhone 13", page_icon="📱")
-st.title("📱 Sistem Peminjaman iPhone 13 Update")
+st.title("📱 Peminjaman iPhone 13")
 
 # === FUNGSI BANTUAN ===
 def get_data():
