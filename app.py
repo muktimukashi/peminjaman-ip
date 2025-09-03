@@ -4,34 +4,6 @@ import pandas as pd
 from datetime import datetime
 from zoneinfo import ZoneInfo  # Python 3.9+
 
-# === CUSTOM BACKGROUND & SIDEBAR ===
-st.markdown(
-    """
-    <style>
-    /* Background halaman utama: gelap */
-    .stApp {
-        background-color: #252525;
-    }
-
-    /* Sidebar warna hijau/pink */
-    [data-testid="stSidebar"] > div:first-child {
-        background-color: #f784c5;  /* bisa ganti #90ee90 untuk hijau */
-    }
-
-    /* Teks di sidebar jadi putih dan bold */
-    [data-testid="stSidebar"] label, 
-    [data-testid="stSidebar"] h2, 
-    [data-testid="stSidebar"] h3 {
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-
 # === KONFIGURASI SUPABASE ===
 supabase_url = st.secrets["SUPABASE_URL"]
 supabase_key = st.secrets["SUPABASE_KEY"]
