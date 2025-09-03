@@ -4,9 +4,9 @@ import pandas as pd
 from datetime import datetime
 
 # === KONFIGURASI SUPABASE ===
-SUPABASE_URL = "https://xxxx.supabase.co"  # ganti dengan URL project kamu
-SUPABASE_KEY = "your-anon-key"  # ganti dengan anon/public key
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+url = st.secrets["SUPABASE_URL"]
+key = st.secrets["SUPABASE_KEY"]
+supabase = create_client(url, key)
 
 # === KONFIGURASI STREAMLIT ===
 st.set_page_config(page_title="Peminjaman iPhone 13", page_icon="📱")
