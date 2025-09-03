@@ -10,17 +10,18 @@ st.markdown(
     <style>
     /* Background halaman utama: pink gradient */
     .stApp {
-        background-color: #f784c5;
+        background: linear-gradient(to bottom right, #ffc0cb, #ffe4e1);
     }
 
     /* Sidebar warna hijau */
-    .css-1d391kg {  /* class default sidebar Streamlit */
-        background-color: #1b602f;
+    .css-1d391kg {
+        background-color: #90ee90;
         padding: 1rem;
     }
     </style>
     """,
     unsafe_allow_html=True
+)
 
 # === KONFIGURASI SUPABASE ===
 supabase_url = st.secrets["SUPABASE_URL"]
