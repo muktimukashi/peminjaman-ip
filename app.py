@@ -4,6 +4,24 @@ import pandas as pd
 from datetime import datetime
 from zoneinfo import ZoneInfo  # Python 3.9+
 
+# === CUSTOM BACKGROUND & SIDEBAR ===
+st.markdown(
+    """
+    <style>
+    /* Background halaman utama: pink gradient */
+    .stApp {
+        background-color: #f784c5;
+    }
+
+    /* Sidebar warna hijau */
+    .css-1d391kg {  /* class default sidebar Streamlit */
+        background-color: #1b602f;
+        padding: 1rem;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+
 # === KONFIGURASI SUPABASE ===
 supabase_url = st.secrets["SUPABASE_URL"]
 supabase_key = st.secrets["SUPABASE_KEY"]
