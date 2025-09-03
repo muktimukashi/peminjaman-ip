@@ -8,15 +8,16 @@ from zoneinfo import ZoneInfo  # Python 3.9+
 st.markdown(
     """
     <style>
-    /* Background halaman utama: pink gradient */
+    /* Background halaman utama: gelap */
     .stApp {
         background-color: #252525;
     }
 
-    /* Sidebar warna hijau */
-    [data-testid="stSidebar"] {
-        background-color: #f784c5;
+    /* Sidebar warna hijau/pink */
+    [data-testid="stSidebar"] > div:first-child {
+        background-color: #f784c5;  /* bisa ganti #90ee90 untuk hijau */
     }
+
     /* Teks di sidebar jadi putih dan bold */
     [data-testid="stSidebar"] label, 
     [data-testid="stSidebar"] h2, 
@@ -29,6 +30,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 # === KONFIGURASI SUPABASE ===
 supabase_url = st.secrets["SUPABASE_URL"]
