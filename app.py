@@ -10,7 +10,7 @@ st.markdown(
     <style>
     /* Background halaman utama: pink gradient */
     .stApp {
-        background-color: #90ee90;
+        background-color: #252525;
     }
 
     /* Sidebar warna hijau */
