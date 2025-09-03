@@ -10,13 +10,12 @@ st.markdown(
     <style>
     /* Background halaman utama: pink gradient */
     .stApp {
-        background: linear-gradient(to bottom right, #ffc0cb, #ffe4e1);
+        background-color: #90ee90;
     }
 
     /* Sidebar warna hijau */
-    .css-1d391kg {
-        background-color: #90ee90;
-        padding: 1rem;
+    [data-testid="stSidebar"] {
+        background-color: #f784c5;
     }
     </style>
     """,
