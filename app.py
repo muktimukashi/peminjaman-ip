@@ -2,15 +2,16 @@ import streamlit as st
 from supabase import create_client
 import pandas as pd
 from datetime import datetime
+from zoneinfo import ZoneInfo  # Python 3.9+
 
 # === KONFIGURASI SUPABASE ===
-url = st.secrets["SUPABASE_URL"]
-key = st.secrets["SUPABASE_KEY"]
-supabase = create_client(url, key)
+supabase_url = st.secrets["SUPABASE_URL"]
+supabase_key = st.secrets["SUPABASE_KEY"]
+supabase = create_client(supabase_url, supabase_key)
 
 # === KONFIGURASI STREAMLIT ===
 st.set_page_config(page_title="Peminjaman iPhone 13", page_icon="📱")
-st.title("📱 Sistem Peminjaman iPhone 13")
+st.title("📱 Sistem Peminjaman iPhone 13 (Supabase)")
 
 # === FUNGSI BANTUAN ===
 def get_data():
@@ -21,7 +22,7 @@ def pinjam(nama):
     supabase.table("peminjaman").insert({
         "nama": nama,
         "barang": "iPhone 13",
-        "tanggal_pinjam": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "tanggal_pinjam": datetime.now(ZoneInfo("Asia/Jakarta")).strftime("%Y-%m-%d %H:%M"),
         "tanggal_kembali": "-",
         "status": "Dipinjam",
         "dipindahkan_ke": "-"
@@ -30,7 +31,7 @@ def pinjam(nama):
 def update_status(nama_asal, status, dipindahkan_ke="-"):
     supabase.table("peminjaman").update({
         "status": status,
-        "tanggal_kembali": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "tanggal_kembali": datetime.now(ZoneInfo("Asia/Jakarta")).strftime("%Y-%m-%d %H:%M"),
         "dipindahkan_ke": dipindahkan_ke
     }).eq("nama", nama_asal).eq("status", "Dipinjam").execute()
 
